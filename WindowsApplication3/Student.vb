@@ -158,6 +158,4 @@ Public Class Student
         m_courses.Add(New Enrollment(section, grade, year, quarter))
     end sub
 
-    'Internal class used by student to keep track of courses taken.
-    
 End Class

@@ -36,11 +36,21 @@
         room = New Room
         room.ID = "CLA-1002"
 
+        'Test Data'
         tempRoomDB.Add(room, room.ID)
+        Dim sect1 As New Section
+        sect1.CourseID = "CIS 102"
+        Dim sect2 As New Section
+        sect2.CourseID = "CIS 222"
+        '/End Test Data'
 
         Dim student As New Student("112233", "Miguel Venegas", "2012", "Fall", True)
+        student.addCourseTakenWithGrade(sect1, "A")
+        student.addCourseTakenWithGrade(sect2, "A")
         tempStudentDB.Add(student, student.ID)
         student = New Student("442233", "MarTIN Legaspi", "2012", "Fall", True)
+        student.addCourseTakenWithGrade(sect1, "B")
+        student.addCourseTakenWithGrade(sect2, "B")
         tempStudentDB.Add(student, student.ID)
 
         'test adding room, course, student and professor  into a master schedule
@@ -61,5 +71,4 @@
     End Sub
 
 
-   
 End Class

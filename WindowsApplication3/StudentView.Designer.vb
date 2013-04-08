@@ -22,7 +22,7 @@ Partial Class StudentView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.lbxStudentList = New System.Windows.Forms.ListBox()
         Me.lblStudentList = New System.Windows.Forms.Label()
         Me.lblStudentName = New System.Windows.Forms.Label()
         Me.lblCurriculum = New System.Windows.Forms.Label()
@@ -40,25 +40,24 @@ Partial Class StudentView
         Me.lblClassStanding = New System.Windows.Forms.Label()
         Me.lblMajor = New System.Windows.Forms.Label()
         Me.lblCourseCurriculum = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.ListBox4 = New System.Windows.Forms.ListBox()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.gbxCompleted = New System.Windows.Forms.GroupBox()
+        Me.lbxCompleted = New System.Windows.Forms.ListBox()
+        Me.lbxNotTaken = New System.Windows.Forms.ListBox()
+        Me.gbxNotTaken = New System.Windows.Forms.GroupBox()
+        Me.gbxFailDrop = New System.Windows.Forms.GroupBox()
+        Me.lbxFailDrop = New System.Windows.Forms.ListBox()
+        Me.gbxCompleted.SuspendLayout()
+        Me.gbxNotTaken.SuspendLayout()
+        Me.gbxFailDrop.SuspendLayout()
         Me.SuspendLayout()
         '
-        'ListBox1
+        'lbxStudentList
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Items.AddRange(New Object() {"Kevin Ampuero", "Brian Berg", "Shigom Haile", "Martin Legaspi", "Miguel Venegas"})
-        Me.ListBox1.Location = New System.Drawing.Point(39, 88)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox1.TabIndex = 0
+        Me.lbxStudentList.FormattingEnabled = True
+        Me.lbxStudentList.Location = New System.Drawing.Point(39, 88)
+        Me.lbxStudentList.Name = "lbxStudentList"
+        Me.lbxStudentList.Size = New System.Drawing.Size(120, 95)
+        Me.lbxStudentList.TabIndex = 0
         '
         'lblStudentList
         '
@@ -72,13 +71,13 @@ Partial Class StudentView
         '
         'lblStudentName
         '
-        Me.lblStudentName.AutoSize = True
         Me.lblStudentName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStudentName.Location = New System.Drawing.Point(435, 20)
+        Me.lblStudentName.Location = New System.Drawing.Point(334, 20)
         Me.lblStudentName.Name = "lblStudentName"
-        Me.lblStudentName.Size = New System.Drawing.Size(98, 24)
+        Me.lblStudentName.Size = New System.Drawing.Size(301, 24)
         Me.lblStudentName.TabIndex = 14
         Me.lblStudentName.Text = "Brian Berg"
+        Me.lblStudentName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblCurriculum
         '
@@ -221,11 +220,11 @@ Partial Class StudentView
         '
         Me.lblMajor.AutoSize = True
         Me.lblMajor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMajor.Location = New System.Drawing.Point(245, 44)
+        Me.lblMajor.Location = New System.Drawing.Point(391, 44)
         Me.lblMajor.Name = "lblMajor"
-        Me.lblMajor.Size = New System.Drawing.Size(468, 20)
+        Me.lblMajor.Size = New System.Drawing.Size(183, 20)
         Me.lblMajor.TabIndex = 30
-        Me.lblMajor.Text = "B.S. Business Administration: Computer Information Systems"
+        Me.lblMajor.Text = "B.S. Computer Science"
         '
         'lblCourseCurriculum
         '
@@ -237,77 +236,77 @@ Partial Class StudentView
         Me.lblCourseCurriculum.TabIndex = 31
         Me.lblCourseCurriculum.Text = "Curriculum Progress"
         '
-        'GroupBox1
+        'gbxCompleted
         '
-        Me.GroupBox1.Controls.Add(Me.ListBox2)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Green
-        Me.GroupBox1.Location = New System.Drawing.Point(305, 341)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(112, 147)
-        Me.GroupBox1.TabIndex = 34
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Completed"
+        Me.gbxCompleted.Controls.Add(Me.lbxCompleted)
+        Me.gbxCompleted.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxCompleted.ForeColor = System.Drawing.Color.Green
+        Me.gbxCompleted.Location = New System.Drawing.Point(305, 341)
+        Me.gbxCompleted.Name = "gbxCompleted"
+        Me.gbxCompleted.Size = New System.Drawing.Size(112, 147)
+        Me.gbxCompleted.TabIndex = 34
+        Me.gbxCompleted.TabStop = False
+        Me.gbxCompleted.Text = "Completed"
         '
-        'ListBox2
+        'lbxCompleted
         '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Items.AddRange(New Object() {"CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
-        Me.ListBox2.Location = New System.Drawing.Point(7, 20)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(99, 121)
-        Me.ListBox2.TabIndex = 0
+        Me.lbxCompleted.FormattingEnabled = True
+        Me.lbxCompleted.Items.AddRange(New Object() {"CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
+        Me.lbxCompleted.Location = New System.Drawing.Point(7, 20)
+        Me.lbxCompleted.Name = "lbxCompleted"
+        Me.lbxCompleted.Size = New System.Drawing.Size(99, 121)
+        Me.lbxCompleted.TabIndex = 0
         '
-        'ListBox3
+        'lbxNotTaken
         '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Items.AddRange(New Object() {"MHR 318", "IBM 201", "TOM 301", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
-        Me.ListBox3.Location = New System.Drawing.Point(7, 19)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(100, 121)
-        Me.ListBox3.TabIndex = 0
+        Me.lbxNotTaken.FormattingEnabled = True
+        Me.lbxNotTaken.Items.AddRange(New Object() {"MHR 318", "IBM 201", "TOM 301", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
+        Me.lbxNotTaken.Location = New System.Drawing.Point(7, 19)
+        Me.lbxNotTaken.Name = "lbxNotTaken"
+        Me.lbxNotTaken.Size = New System.Drawing.Size(100, 121)
+        Me.lbxNotTaken.TabIndex = 0
         '
-        'GroupBox2
+        'gbxNotTaken
         '
-        Me.GroupBox2.Controls.Add(Me.ListBox3)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.Olive
-        Me.GroupBox2.Location = New System.Drawing.Point(423, 341)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(113, 147)
-        Me.GroupBox2.TabIndex = 35
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Not Taken"
+        Me.gbxNotTaken.Controls.Add(Me.lbxNotTaken)
+        Me.gbxNotTaken.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxNotTaken.ForeColor = System.Drawing.Color.Olive
+        Me.gbxNotTaken.Location = New System.Drawing.Point(423, 341)
+        Me.gbxNotTaken.Name = "gbxNotTaken"
+        Me.gbxNotTaken.Size = New System.Drawing.Size(113, 147)
+        Me.gbxNotTaken.TabIndex = 35
+        Me.gbxNotTaken.TabStop = False
+        Me.gbxNotTaken.Text = "Not Taken"
         '
-        'GroupBox3
+        'gbxFailDrop
         '
-        Me.GroupBox3.Controls.Add(Me.ListBox4)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.ForeColor = System.Drawing.Color.Red
-        Me.GroupBox3.Location = New System.Drawing.Point(542, 341)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(116, 147)
-        Me.GroupBox3.TabIndex = 36
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Failed/Dropped"
+        Me.gbxFailDrop.Controls.Add(Me.lbxFailDrop)
+        Me.gbxFailDrop.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxFailDrop.ForeColor = System.Drawing.Color.Red
+        Me.gbxFailDrop.Location = New System.Drawing.Point(542, 341)
+        Me.gbxFailDrop.Name = "gbxFailDrop"
+        Me.gbxFailDrop.Size = New System.Drawing.Size(116, 147)
+        Me.gbxFailDrop.TabIndex = 36
+        Me.gbxFailDrop.TabStop = False
+        Me.gbxFailDrop.Text = "Failed/Dropped"
         '
-        'ListBox4
+        'lbxFailDrop
         '
-        Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Items.AddRange(New Object() {"ACC 207", "CIS 231", "TOM 302", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
-        Me.ListBox4.Location = New System.Drawing.Point(7, 19)
-        Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(103, 121)
-        Me.ListBox4.TabIndex = 0
+        Me.lbxFailDrop.FormattingEnabled = True
+        Me.lbxFailDrop.Items.AddRange(New Object() {"ACC 207", "CIS 231", "TOM 302", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
+        Me.lbxFailDrop.Location = New System.Drawing.Point(7, 19)
+        Me.lbxFailDrop.Name = "lbxFailDrop"
+        Me.lbxFailDrop.Size = New System.Drawing.Size(103, 121)
+        Me.lbxFailDrop.TabIndex = 0
         '
         'StudentView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(913, 596)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.gbxFailDrop)
+        Me.Controls.Add(Me.gbxNotTaken)
+        Me.Controls.Add(Me.gbxCompleted)
         Me.Controls.Add(Me.lblCourseCurriculum)
         Me.Controls.Add(Me.lblMajor)
         Me.Controls.Add(Me.lblClassStandingValue)
@@ -325,17 +324,17 @@ Partial Class StudentView
         Me.Controls.Add(Me.lblCurriculum)
         Me.Controls.Add(Me.lblStudentName)
         Me.Controls.Add(Me.lblStudentList)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.lbxStudentList)
         Me.Name = "StudentView"
         Me.Text = "StudentView"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
+        Me.gbxCompleted.ResumeLayout(False)
+        Me.gbxNotTaken.ResumeLayout(False)
+        Me.gbxFailDrop.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
+    Friend WithEvents lbxStudentList As System.Windows.Forms.ListBox
     Friend WithEvents lblStudentList As System.Windows.Forms.Label
     Friend WithEvents lblStudentName As System.Windows.Forms.Label
     Friend WithEvents lblCurriculum As System.Windows.Forms.Label
@@ -353,10 +352,10 @@ Partial Class StudentView
     Friend WithEvents lblClassStanding As System.Windows.Forms.Label
     Friend WithEvents lblMajor As System.Windows.Forms.Label
     Friend WithEvents lblCourseCurriculum As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
-    Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
+    Friend WithEvents gbxCompleted As System.Windows.Forms.GroupBox
+    Friend WithEvents lbxCompleted As System.Windows.Forms.ListBox
+    Friend WithEvents lbxNotTaken As System.Windows.Forms.ListBox
+    Friend WithEvents gbxNotTaken As System.Windows.Forms.GroupBox
+    Friend WithEvents gbxFailDrop As System.Windows.Forms.GroupBox
+    Friend WithEvents lbxFailDrop As System.Windows.Forms.ListBox
 End Class
