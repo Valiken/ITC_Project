@@ -250,7 +250,6 @@ Partial Class StudentView
         'lbxCompleted
         '
         Me.lbxCompleted.FormattingEnabled = True
-        Me.lbxCompleted.Items.AddRange(New Object() {"CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
         Me.lbxCompleted.Location = New System.Drawing.Point(7, 20)
         Me.lbxCompleted.Name = "lbxCompleted"
         Me.lbxCompleted.Size = New System.Drawing.Size(99, 121)
@@ -259,7 +258,6 @@ Partial Class StudentView
         'lbxNotTaken
         '
         Me.lbxNotTaken.FormattingEnabled = True
-        Me.lbxNotTaken.Items.AddRange(New Object() {"MHR 318", "IBM 201", "TOM 301", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
         Me.lbxNotTaken.Location = New System.Drawing.Point(7, 19)
         Me.lbxNotTaken.Name = "lbxNotTaken"
         Me.lbxNotTaken.Size = New System.Drawing.Size(100, 121)
@@ -292,7 +290,6 @@ Partial Class StudentView
         'lbxFailDrop
         '
         Me.lbxFailDrop.FormattingEnabled = True
-        Me.lbxFailDrop.Items.AddRange(New Object() {"ACC 207", "CIS 231", "TOM 302", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310", "CIS 101", "CIS 234", "CIS 304", "CIS 305", "CIS 307", "CIS 310"})
         Me.lbxFailDrop.Location = New System.Drawing.Point(7, 19)
         Me.lbxFailDrop.Name = "lbxFailDrop"
         Me.lbxFailDrop.Size = New System.Drawing.Size(103, 121)

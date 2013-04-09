@@ -309,9 +309,6 @@ Public Class DataGenerator
                     tempCurriculumCollection.Remove(tempCurriculum.ID)
                     tempCurriculumCollection.Add(tempCurriculum, tempCurriculum.ID)
                 End If
-
-
-
                 Controller.updateCurriculumDB(tempCurriculumCollection)
 
                 stringReader = reader.ReadLine()
