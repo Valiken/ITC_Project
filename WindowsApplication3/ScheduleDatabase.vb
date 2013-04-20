@@ -26,7 +26,13 @@ Public Class ScheduleDatabase
     End Property
 
     Public Sub addSchedule(ByVal schedule As Schedule)
-        m_scheduleDatabase.Add(schedule, schedule.ScheduleID)
+        If Not m_scheduleDatabase.Contains(schedule.ScheduleID) Then
+            m_scheduleDatabase.Add(schedule, schedule.ScheduleID)
+        Else
+            m_scheduleDatabase.Remove(schedule.ScheduleID)
+            m_scheduleDatabase.Add(schedule, schedule.ScheduleID)
+        End If
+
     End Sub
 
     Public Function getSchedule(ByVal id As String) As Schedule

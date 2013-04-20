@@ -3,7 +3,7 @@
 Public Class CurriculumMetericView
 
     'in class variables for handling data generation 
-    Private m_graduatedStudents, m_droppedStudents As Integer
+    Private m_graduatedStudents, m_droppedStudents As String
     Private m_curriculum As String
     Private m_maxUnits, m_minUnits, m_avgUnits, m_unitsLeft As String ' for unit metrics 
     Private m_maxTime, m_minTime, m_avgTime As String ' for time metrics 
@@ -53,9 +53,12 @@ Public Class CurriculumMetericView
         'functions and stuff
         titleChanges()
         populateCurriculums()
-        calcedGraduated()
+        graduatedStudents()
         Units()
         time()
+        avgUnitsRemaining()
+        calcedDropped()
+        totalStudents()
 
     End Sub 
 
@@ -118,34 +121,101 @@ Public Class CurriculumMetericView
 
     End Sub 'working so far 
 
-    'For calculating graduated amount 
-    Public Sub calcedGraduated()
+    Public Sub graduatedStudents()
+        Dim gradCounter As Integer = 0
+        For Each std As Student In studentList
+            If std.CurrentCurriculum.ID = curriculumList(cmbxCurriclum.SelectedIndex).ID Then
+                If hasGraduated(std) = True Then
+                    gradCounter += 1
+                End If
+            End If
+        Next
+        m_graduatedStudents = gradCounter.ToString
+        lblGrad.Text = "Graduated Students: " + m_graduatedStudents
+    End Sub
 
-        'not sure if this is actually working or not; currently unable to test 
-        For Each classCount In students
-            Dim graduationCounter As Integer
-            classCount = tempStudent.Courses.Count
-            If classCount >= 59 Then
-                graduationCounter += 1
-                m_graduatedStudents = graduationCounter
+    'For calculating graduated students per curriculum 
+    Public Function hasGraduated(ByVal st As Student) As Boolean
+        Dim isGraduated As Boolean = True
+        Dim passedClasses As New ArrayList
+
+        For Each enroll As Enrollment In st.SectionsTaken
+            If (enroll.Grade = "A" Or enroll.Grade = "B" Or enroll.Grade = "C") Then
+                passedClasses.Add(enroll.SectionTaken.CourseID)
+            End If
+        Next
+
+        Dim tempcourselist As New ArrayList
+        Dim tempelectivelist As New ArrayList
+
+        For Each cid As String In st.CurrentCurriculum.RequiredGECourses.Courses
+            tempcourselist.Add(cid)
+        Next
+
+        For Each cid As String In st.CurrentCurriculum.RequiredCoreCourses.Courses
+            tempcourselist.Add(cid)
+        Next
+
+        For Each cid As String In st.CurrentCurriculum.ElectiveCourses.Courses
+            tempelectivelist.Add(cid)
+        Next
+
+        Dim passedAllClasses As Boolean = True
+        For Each coid As String In tempcourselist
+            If (passedAllClasses) Then
+                passedAllClasses = passedClasses.Contains(coid)
+            End If
+        Next
+
+        Dim unitcount As Integer = 0
+        For Each coid As String In tempelectivelist
+            If (tempelectivelist.Contains(coid)) Then
+                unitcount += 4 'assume all electives worth 4 units
+            End If
+
+        Next
+        Dim passedelectives As Boolean = False
+        If unitcount >= st.CurrentCurriculum.ElectiveUnitsRequired Then
+            passedelectives = True
+        End If
+
+        isGraduated = (passedAllClasses And passedelectives)
+
+        Return isGraduated
+    End Function
+
+    'For calculating dropped students per curriculum 
+    Public Sub calcedDropped()
+        Dim saveNow As DateTime = DateTime.Now
+        Dim quarterArray As New ArrayList
+        Dim totalQuarterArray As New ArrayList
+        Dim droppedCount As Integer = 0
+        Dim yr As New Enrollment
+        For Each std As Student In studentList
+            If std.CurrentCurriculum.ID = curriculumList(cmbxCurriclum.SelectedIndex).ID Then
+                quarterArray.Add(std.SectionsTaken)
+            End If
+        Next
+
+        For Each enrollarray As ArrayList In quarterArray
+            If enrollarray.Count - 1 >= 0 Then
+                yr = enrollarray.Item(enrollarray.Count - 1)
+                If Integer.Parse(saveNow.Year.ToString) - Integer.Parse(yr.Year.ToString) > 0 Then
+                    droppedCount += 1
+                End If
             Else
 
             End If
         Next
-        Dim grad As String
-        grad = m_graduatedStudents.ToString
-        lblGrad.Text = "Graduated Students: " + grad
+        Dim dc As String = droppedCount.ToString
 
-    End Sub 'Unsure if working or not 
+        m_droppedStudents = dc
 
-    Public Sub calcedDropped()
+        lblDropOut.Text = "Dropped Out: " + m_droppedStudents
+    End Sub 'Correct
 
-    End Sub 'not finished 
-
+    ' used to calculate the metrics used for time in terms of quarters 
     Public Sub time()
-        ' Dim quarterCount As Integer = 0
-       
-
         Dim quarterArray As New ArrayList
         Dim totalQuarterArray As New ArrayList
 
@@ -178,7 +248,7 @@ Public Class CurriculumMetericView
         lblMinTime.Text = "Minimum quarters attended: " + m_minTime
         lblAvgTime.Text = "Average quarters attended: " + m_avgTime
 
-    End Sub 'This needs much work 
+    End Sub 'working so far 
 
     Public Function avgTime(ByVal quarterArray As ArrayList) 'in quarters 
         Dim quarters As Integer = Nothing
@@ -191,9 +261,9 @@ Public Class CurriculumMetericView
             num = quarterArray.Count
             calc = quarters / num
         Next
-        Return calc
+        Return FormatNumber(calc)
 
-    End Function 'cant test yet
+    End Function 'working so far
 
     Public Function minTime(ByVal quarterArray As ArrayList) 'in quarters 
         Dim min As Integer = Nothing
@@ -208,7 +278,7 @@ Public Class CurriculumMetericView
         minTime = min
         Return minTime
 
-    End Function 'cant test yet
+    End Function 'working so far
 
     Public Function maxTime(ByVal quarterArray As ArrayList) 'in quarters 
         Dim max As Integer = Nothing
@@ -223,22 +293,17 @@ Public Class CurriculumMetericView
         maxTime = max
         Return maxTime
 
-    End Function 'cant test yet
-
-
-
-
-
+    End Function 'working so far
 
     ' these four blocks of code are used to determine unit metrics 
     Public Sub Units()
 
-        Dim unitArray As new ArrayList
+        Dim unitArray As New ArrayList
         Dim course As New Course
         Dim courseDB As Collection = Controller.getCourseDB()
-         
+
         'Dim coursesTakenList As ArrayList = tempStudent.SectionsTaken
-        
+
         Dim sectionArray As New ArrayList
 
         For Each std As Student In studentList
@@ -265,56 +330,162 @@ Public Class CurriculumMetericView
         lblMaxUnit.Text = "Maximum units taken: " + m_maxUnits
         lblMinUnit.Text = "Minimum units taken: " + m_minUnits
         lblAvgUnits.Text = "Average units taken: " + m_avgUnits
-        'lblAvgRemaining.Text = "Average Remaining Units: " + m_unitsLeft
 
     End Sub 'works for avg, max, and min 
 
     Public Function avgUnits(ByVal unitArray As ArrayList)
-        Dim units As Integer = Nothing 
-        Dim num As Integer = Nothing 
-        Dim calc As Double = Nothing 
-        For i As Integer = 0 to (unitArray.Count - 1)
-            units += unitArray(i) 
+        Dim units As Integer = Nothing
+        Dim num As Integer = Nothing
+        Dim calc As Double = Nothing
+        For i As Integer = 0 To (unitArray.Count - 1)
+            units += unitArray(i)
 
             'unitArray.Count.ToString 
             num = unitArray.Count
             calc = units / num
         Next
-        avgUnits = calc 
-        Return avgUnits
+        Return FormatNumber(calc)
     End Function 'working so far 
-
-    Public Function avgUnitsRemaining()
-        avgUnitsRemaining = "0"
-        Return avgUnitsRemaining
-    End Function 'not working 
 
     Public Function maxUnits(ByVal unitArray As ArrayList)
-        Dim max As Integer = Nothing 
- 
-        For i As Integer = 0 to (unitArray.Count - 1)
-            If i = 0 then 
+        Dim max As Integer = Nothing
+
+        For i As Integer = 0 To (unitArray.Count - 1)
+            If i = 0 Then
                 max = unitArray(i)
-            Else 
-                If unitArray(i) > max then max = unitArray(i)
+            Else
+                If unitArray(i) > max Then max = unitArray(i)
             End If
         Next
-        maxUnits = max 
-        Return maxUnits
+        Return max
     End Function 'working so far 
 
-    Public Function minUnits(ByVal unitArray As ArrayList) 
-        Dim min As Integer = Nothing 
- 
-        For i As Integer = 0 to (unitArray.Count - 1)
-            If i = 0 then 
+    Public Function minUnits(ByVal unitArray As ArrayList)
+        Dim min As Integer = Nothing
+
+        For i As Integer = 0 To (unitArray.Count - 1)
+            If i = 0 Then
                 min = unitArray(i)
-            Else 
-                If unitArray(i) < min then min = unitArray(i)
+            Else
+                If unitArray(i) < min Then min = unitArray(i)
             End If
         Next
-        minUnits = min 
-        Return minUnits
+        Return min
     End Function 'working so far 
+
+    'these two blocks calculate average remaining units for the curriculum
+    Public Sub avgUnitsRemaining()
+
+        Dim unitArray As New ArrayList
+        Dim course As New Course
+        Dim courseDB As Collection = Controller.getCourseDB()
+
+        'Dim coursesTakenList As ArrayList = tempStudent.SectionsTaken
+        Dim sectionArray2 As New ArrayList
+        Dim remainingArray As New ArrayList
+
+        'Dim requiredCoreCoursesList As New ArrayList
+        'Dim requiredGECoursesList As New ArrayList
+        Dim electiveCoursesList As New ArrayList
+
+        'requiredGECoursesList.Add(curriculumList(cmbxCurriclum.SelectedIndex).RequiredGECourses)
+        'requiredCoreCoursesList.Add(curriculumList(cmbxCurriclum.SelectedIndex).RequiredCoreCourses)
+        electiveCoursesList.Add(curriculumList(cmbxCurriclum.SelectedIndex).ElectiveCourses)
+
+        'Dim tempCourseList As New ArrayList
+        'Dim tempUnits As New ArrayList
+        'Dim UnitCount As Integer
+        'Dim reqUnitsRemaining As Integer
+
+        For Each std2 As Student In studentList
+            If std2.CurrentCurriculum.ID = curriculumList(cmbxCurriclum.SelectedIndex).ID Then
+                sectionArray2.Add(std2.SectionsTaken)
+            End If
+        Next
+
+        'For Each clssGe As String In curriculumList(cmbxCurriclum.SelectedIndex).RequiredGECourses.Courses
+        '    If clssGe = tempCourse.ID Then
+        '        tempCourseList.Add(tempCourse)
+        '        'courseList.Contains(tempCourse)
+
+        '    End If
+        'Next
+        'For Each clssCr As String In curriculumList(cmbxCurriclum.SelectedIndex).RequiredCoreCourses.Courses
+        '    If clssCr = tempCourse.ID Then
+        '        tempCourseList.Add(tempCourse)
+        '    End If
+        'Next
+
+        ''For Each cid As String In curriculumList(cmbxCurriclum.SelectedIndex).RequiredGECourses.Courses
+        ''    tempCourseList.Add(cid)
+        ''Next
+
+        ''For Each cid As String In curriculumList(cmbxCurriclum.SelectedIndex).RequiredCoreCourses.Courses
+        ''    tempCourseList.Add(cid)
+        ''Next
+
+        'For Each Curr As Curriculum In curriculumList
+        '    For Each tmpcrs As Course In tempCourseList
+        '        UnitCount += tmpcrs.Units
+        '    Next
+        'Next
+
+
+        For Each Std2 As Student In studentList
+            If Std2.CurrentCurriculum.ID = curriculumList(cmbxCurriclum.SelectedIndex).ID Then
+                For Each courseID In electiveCoursesList
+                    For Each enrollarray In sectionArray2
+                        Dim electiveUnitsRemaining As Integer = curriculumList(cmbxCurriclum.SelectedIndex).ElectiveUnitsRequired
+                        For Each enroll As Enrollment In enrollarray
+                            If enroll.Grade Is Nothing Or Std2.calculateGradePoints(enroll.Grade) <= 1.7 Then
+                                'Do nothing
+                            Else
+                                tempCourse = courses.Item(enroll.SectionTaken.CourseID)
+                                electiveUnitsRemaining -= tempCourse.Units
+
+                            End If
+
+                            If electiveUnitsRemaining > 0 Then
+                                remainingArray.Add(electiveUnitsRemaining)
+                            Else
+                                Dim overElectives As Integer = 0
+                                remainingArray.Add(overElectives)
+                            End If
+
+                        Next
+                    Next
+                Next
+            End If
+        Next
+
+        m_unitsLeft = (avgRemainingCalc(remainingArray)).ToString
+
+        lblAvgRemaining.Text = "Average Remaining Units: " + m_unitsLeft
+
+    End Sub 'INCORRECT
+
+    Public Function avgRemainingCalc(ByVal remainingArray As ArrayList)
+        Dim units As Integer = Nothing
+        Dim num As Integer = Nothing
+        Dim calc As Double = Nothing
+        For i As Integer = 0 To (remainingArray.Count - 1)
+            units += remainingArray(i)
+            num = remainingArray.Count
+            calc = units / num
+        Next
+        Return FormatNumber(calc)
+    End Function 'working I think
+
+    Public Function totalStudents()
+        Dim stdCount As Integer = 0
+        For Each std As Student In studentList
+            If std.CurrentCurriculum.ID = curriculumList(cmbxCurriclum.SelectedIndex).ID Then
+                stdCount += 1
+            End If
+        Next
+
+        lblStdTotal.Text = "Total Students: " + stdCount.ToString
+        Return stdCount
+    End Function
 
 End Class

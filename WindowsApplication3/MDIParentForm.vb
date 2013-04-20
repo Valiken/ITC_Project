@@ -65,7 +65,7 @@ Public Class MDIParentForm
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub TESTDATAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TESTDATAToolStripMenuItem.Click
+    Private Sub TESTDATAToolStripMenuItem_Click(sender As Object, e As EventArgs)
         ' Create a new instance of the child form.
         Dim ChildForm As New Form1
         ' Make it a child of this MDI form before showing it.
@@ -84,7 +84,7 @@ Public Class MDIParentForm
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Data Implementation: Window " & m_ChildFormNumber
+        ChildForm.Text = "Data Implementation"
 
         ChildForm.Show()
     End Sub
@@ -96,7 +96,7 @@ Public Class MDIParentForm
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Student View: Window " & m_ChildFormNumber
+        ChildForm.Text = "Student View"
 
         ChildForm.Show()
     End Sub
@@ -108,7 +108,7 @@ Public Class MDIParentForm
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Curriculum View: Window " & m_ChildFormNumber
+        ChildForm.Text = "Curriculum View"
 
         ChildForm.Show()
     End Sub
@@ -120,7 +120,7 @@ Public Class MDIParentForm
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Schedule View: Window " & m_ChildFormNumber
+        ChildForm.Text = "Schedule View"
 
         ChildForm.Show()
     End Sub

@@ -10,6 +10,7 @@ Public Class Course
     Private m_units As Integer
     Private m_companionCourse, m_PreRequisit As String
     Private m_prerequisite As ArrayList
+    Private m_AmtNeeded As Integer
 
     Public Sub New()
 
@@ -31,12 +32,21 @@ Public Class Course
 
     End Sub
 
+    Public Property AmountNeeded As Integer
+        Get
+            Return m_AmtNeeded
+        End Get
+        Set(value As Integer)
+            m_AmtNeeded = value
+        End Set
+    End Property
     ''' <summary>
     ''' A String of the ID of the companion course of this course if any exists
     ''' </summary>
     ''' <value></value>
     ''' <returns></returns>
     ''' <remarks></remarks>
+    ''' 
     Public Property CompanionCourse As String
         Get
             Return m_companionCourse

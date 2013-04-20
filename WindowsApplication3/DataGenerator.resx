@@ -121,23 +121,8 @@
   <data name="btnCurriculumAddElectives.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAAAyCAYAAAAUYybjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-<<<<<<< HEAD
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOswAA
-        DrMB43LcUwAAAqJJREFUaEPt2z2vKUEYB/BzOxIJhSAq8QU0Oh9Egij0JDR0RC3xlmhoCAmFRlSUOj4B
-        iU+gUyDx8pw7N9mNc3f2ZHfOZueZszPJNFi7fv678+zs7h/42z5kMyZAsPTadruF8XgM3W4X2u02tFot
-        TW82m2BXp63fitc6nQ4Mh0PYbDbfccDH/+8eDgeIxWIkbY7t0WgUdrudBu4L1mg0ciwQLRwkce9Nxbpe
-        rxKKsjedz2fVS8Wq1WoSi4JVrVa1WOl0WmJRsIiL0tRkSSz6gCaxTIz0XLBcLhd4PB7hdnUuWGRons1m
-        3xZ9em+SEcnn83GB5oZFwEKhENxuNya0er1uOxhXLKX4azQaTGB2pwwFligpQ4MlQsrQYWFOGUosrClD
-        jYUtZeixMKVMGCwMKRMKS0lZoVDgUpcxYc3nc6aNtWqhx+MBpLM21uqfCWsymbBuJ5rlWKp/Jixylee3
-        NDMpczyWOvNpYF7L8Vin0wm8Xq+hGQxHY1UqFUNIyijMhLVcLoU+ZJE0ud1uU1AEjAmLzFSGw2EIBoO2
-        9kAg8O8HJhIJeD6fTH+Y2TS9X3BlwuJ5OZ/cz8DSWNMkJFYkEoHX68XiBD9Jk3BYvV6PCcmKNAmDhSFN
-        QmBhSRNqLGxpQouFMU3osDCnCRUW9jShwIrH40zlAFnIqrrJbHHNpYIn52XlchkymQwkk0nDPZvNgt/v
-        N31OZxZF7/NcsKzaeLu/R2IZmPT70RSN3f8olvVRk5VKpbgdF7DA0LaDuGhuwC2VShKLsnsWi0Ut1vF4
-        lFgUrP1+r8Uir+TzeQn2BpbL5b7UhZoHnRaLBbebXbEcu0hNOJ1ONQW0Bkv5xP1+h/V6DYPBwLZH5Ox6
-        FI+2nn6/D6vVCi6Xi+5Zhi4W83nJL17wE3JEAy/VjwsgAAAAAElFTkSuQmCC
-=======
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOuQAA
-        DrkBuAYXvwAAAptJREFUaEPt2z3P8VAYB/COJBIGQUziC1hsPogEMdhJWNiIWeItsbAQEgaLmBhtfAIS
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOrQAA
+        Dq0BDu+AZwAAAptJREFUaEPt2z3P8VAYB/COJBIGQUziC1hsPogEMdhJWNiIWeItsbAQEgaLmBhtfAIS
         n8BmQOLlenKeRONOD2mvW3qu3j0nOYu0Wj//tldPexSQTbeA8mnJ9XoNw+EQ2u02NJtNaDQaml6v18Gs
         ztv+Nz5rtVrQ7/dhtVp9hNNg7XY7iEQioCiKbXs4HIbNZqOB+4E1GAxsC8QLB0vca1OxzuezhOIcTcfj
         UfVSsSqVisTiYJXLZS1WMpmUWBws5vJsarIkFv+CJrEMXOmFYDkcDnC5XJY71IVgsUvzZDLRXS2/Lsiu
@@ -149,29 +134,13 @@
         8kKwvrXzZn+PxNIx6PerIRqz/1Eq2+MmK5FICDsvUIHh7Qdz0byAWygUJBbn8Mzn81qs/X4vsThY2+1W
         i8U+yWazEuwFLJPJ/KgLNROdZrOZsJddqZy7WE04Ho81BfTbKXTX6xWWyyX0ej3TpsiZNRWPt51utwuL
         xQJOp9Pbu4yP8w3R9yZ/dMV/F9QqFVoVFo0AAAAASUVORK5CYII=
->>>>>>> origin/Miguel's-Work
 </value>
   </data>
   <data name="btnCurriculumAddCore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAAAyCAYAAAAUYybjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-<<<<<<< HEAD
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOswAA
-        DrMB43LcUwAAAqJJREFUaEPt2z2vKUEYB/BzOxIJhSAq8QU0Oh9Egij0JDR0RC3xlmhoCAmFRlSUOj4B
-        iU+gUyDx8pw7N9mNc3f2ZHfOZueZszPJNFi7fv678+zs7h/42z5kMyZAsPTadruF8XgM3W4X2u02tFot
-        TW82m2BXp63fitc6nQ4Mh0PYbDbfccDH/+8eDgeIxWIkbY7t0WgUdrudBu4L1mg0ciwQLRwkce9Nxbpe
-        rxKKsjedz2fVS8Wq1WoSi4JVrVa1WOl0WmJRsIiL0tRkSSz6gCaxTIz0XLBcLhd4PB7hdnUuWGRons1m
-        3xZ9em+SEcnn83GB5oZFwEKhENxuNya0er1uOxhXLKX4azQaTGB2pwwFligpQ4MlQsrQYWFOGUosrClD
-        jYUtZeixMKVMGCwMKRMKS0lZoVDgUpcxYc3nc6aNtWqhx+MBpLM21uqfCWsymbBuJ5rlWKp/Jixylee3
-        NDMpczyWOvNpYF7L8Vin0wm8Xq+hGQxHY1UqFUNIyijMhLVcLoU+ZJE0ud1uU1AEjAmLzFSGw2EIBoO2
-        9kAg8O8HJhIJeD6fTH+Y2TS9X3BlwuJ5OZ/cz8DSWNMkJFYkEoHX68XiBD9Jk3BYvV6PCcmKNAmDhSFN
-        QmBhSRNqLGxpQouFMU3osDCnCRUW9jShwIrH40zlAFnIqrrJbHHNpYIn52XlchkymQwkk0nDPZvNgt/v
-        N31OZxZF7/NcsKzaeLu/R2IZmPT70RSN3f8olvVRk5VKpbgdF7DA0LaDuGhuwC2VShKLsnsWi0Ut1vF4
-        lFgUrP1+r8Uir+TzeQn2BpbL5b7UhZoHnRaLBbebXbEcu0hNOJ1ONQW0Bkv5xP1+h/V6DYPBwLZH5Ox6
-        FI+2nn6/D6vVCi6Xi+5Zhi4W83nJL17wE3JEAy/VjwsgAAAAAElFTkSuQmCC
-=======
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOuQAA
-        DrkBuAYXvwAAAptJREFUaEPt2z3P8VAYB/COJBIGQUziC1hsPogEMdhJWNiIWeItsbAQEgaLmBhtfAIS
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOrQAA
+        Dq0BDu+AZwAAAptJREFUaEPt2z3P8VAYB/COJBIGQUziC1hsPogEMdhJWNiIWeItsbAQEgaLmBhtfAIS
         n8BmQOLlenKeRONOD2mvW3qu3j0nOYu0Wj//tldPexSQTbeA8mnJ9XoNw+EQ2u02NJtNaDQaml6v18Gs
         ztv+Nz5rtVrQ7/dhtVp9hNNg7XY7iEQioCiKbXs4HIbNZqOB+4E1GAxsC8QLB0vca1OxzuezhOIcTcfj
         UfVSsSqVisTiYJXLZS1WMpmUWBws5vJsarIkFv+CJrEMXOmFYDkcDnC5XJY71IVgsUvzZDLRXS2/Lsiu
@@ -183,29 +152,13 @@
         8kKwvrXzZn+PxNIx6PerIRqz/1Eq2+MmK5FICDsvUIHh7Qdz0byAWygUJBbn8Mzn81qs/X4vsThY2+1W
         i8U+yWazEuwFLJPJ/KgLNROdZrOZsJddqZy7WE04Ho81BfTbKXTX6xWWyyX0ej3TpsiZNRWPt51utwuL
         xQJOp9Pbu4yP8w3R9yZ/dMV/F9QqFVoVFo0AAAAASUVORK5CYII=
->>>>>>> origin/Miguel's-Work
 </value>
   </data>
   <data name="btnCurriculumAddGE.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAAAyCAYAAAAUYybjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-<<<<<<< HEAD
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOswAA
-        DrMB43LcUwAAAqJJREFUaEPt2z2vKUEYB/BzOxIJhSAq8QU0Oh9Egij0JDR0RC3xlmhoCAmFRlSUOj4B
-        iU+gUyDx8pw7N9mNc3f2ZHfOZueZszPJNFi7fv678+zs7h/42z5kMyZAsPTadruF8XgM3W4X2u02tFot
-        TW82m2BXp63fitc6nQ4Mh0PYbDbfccDH/+8eDgeIxWIkbY7t0WgUdrudBu4L1mg0ciwQLRwkce9Nxbpe
-        rxKKsjedz2fVS8Wq1WoSi4JVrVa1WOl0WmJRsIiL0tRkSSz6gCaxTIz0XLBcLhd4PB7hdnUuWGRons1m
-        3xZ9em+SEcnn83GB5oZFwEKhENxuNya0er1uOxhXLKX4azQaTGB2pwwFligpQ4MlQsrQYWFOGUosrClD
-        jYUtZeixMKVMGCwMKRMKS0lZoVDgUpcxYc3nc6aNtWqhx+MBpLM21uqfCWsymbBuJ5rlWKp/Jixylee3
-        NDMpczyWOvNpYF7L8Vin0wm8Xq+hGQxHY1UqFUNIyijMhLVcLoU+ZJE0ud1uU1AEjAmLzFSGw2EIBoO2
-        9kAg8O8HJhIJeD6fTH+Y2TS9X3BlwuJ5OZ/cz8DSWNMkJFYkEoHX68XiBD9Jk3BYvV6PCcmKNAmDhSFN
-        QmBhSRNqLGxpQouFMU3osDCnCRUW9jShwIrH40zlAFnIqrrJbHHNpYIn52XlchkymQwkk0nDPZvNgt/v
-        N31OZxZF7/NcsKzaeLu/R2IZmPT70RSN3f8olvVRk5VKpbgdF7DA0LaDuGhuwC2VShKLsnsWi0Ut1vF4
-        lFgUrP1+r8Uir+TzeQn2BpbL5b7UhZoHnRaLBbebXbEcu0hNOJ1ONQW0Bkv5xP1+h/V6DYPBwLZH5Ox6
-        FI+2nn6/D6vVCi6Xi+5Zhi4W83nJL17wE3JEAy/VjwsgAAAAAElFTkSuQmCC
-=======
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOuQAA
-        DrkBuAYXvwAAAptJREFUaEPt2z3P8VAYB/COJBIGQUziC1hsPogEMdhJWNiIWeItsbAQEgaLmBhtfAIS
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOrQAA
+        Dq0BDu+AZwAAAptJREFUaEPt2z3P8VAYB/COJBIGQUziC1hsPogEMdhJWNiIWeItsbAQEgaLmBhtfAIS
         n8BmQOLlenKeRONOD2mvW3qu3j0nOYu0Wj//tldPexSQTbeA8mnJ9XoNw+EQ2u02NJtNaDQaml6v18Gs
         ztv+Nz5rtVrQ7/dhtVp9hNNg7XY7iEQioCiKbXs4HIbNZqOB+4E1GAxsC8QLB0vca1OxzuezhOIcTcfj
         UfVSsSqVisTiYJXLZS1WMpmUWBws5vJsarIkFv+CJrEMXOmFYDkcDnC5XJY71IVgsUvzZDLRXS2/Lsiu
@@ -217,29 +170,13 @@
         8kKwvrXzZn+PxNIx6PerIRqz/1Eq2+MmK5FICDsvUIHh7Qdz0byAWygUJBbn8Mzn81qs/X4vsThY2+1W
         i8U+yWazEuwFLJPJ/KgLNROdZrOZsJddqZy7WE04Ho81BfTbKXTX6xWWyyX0ej3TpsiZNRWPt51utwuL
         xQJOp9Pbu4yP8w3R9yZ/dMV/F9QqFVoVFo0AAAAASUVORK5CYII=
->>>>>>> origin/Miguel's-Work
 </value>
   </data>
   <data name="btnCurriculumDrop.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAAAyCAYAAAAUYybjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-<<<<<<< HEAD
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOswAA
-        DrMB43LcUwAAAqNJREFUaEPtm0HLAUEYgH1RFCXJneIXOPgF8h/cUI6ScnAiKbnJReIH+AFyU05KrnJ1
-        xkXcFO/3jVphF/vt7Duzs2ZqLrs7szOPZ2feXTM/8JccMukjQGBppcvlAqPRCNrtNlSrVdtn0s/xePwK
-        x/W44/nsZDIBt9tNbPva7Pf7YTabqcA9wMrlcl8LSEuOQqHwAOwGa7PZSFAaT9N+v78Bu8HKZrMSlgYs
-        8rQp6QYrmUxKWBqwCBcVrFQqJWFpwCJcJCyds72EpRMUmSEtB4vEdcViETKZjO6cz+eh2+2Cy+VCHT4s
-        BSudTr+Nml+dPJ/PkEgkUEFZxiyn0wnr9doQqEqlgg5JCVK5m2XUpt1uB5FIhBkormaJYtP9qw8Xs0Sy
-        iRssEW3iAktUm5jCEt0mZrDsYBM6LBqbyuUy03DgP1+BTZ8Njdq03W4hFotdQZFPuYFAgGkOhULg8/ne
-        /lCmwaKxyVDojlCo1+vhwzJqE0J/qapstVp4sDwej+F3OqpeIRVGhYXUZm7VosIig3Gj0eDWObNvjA6L
-        AAsGg3A4HMxuO/P6mMBSYhUay06nE3M4zzfs9/t4A7xWQGfUMrKegsD+T5DI+lrT4qznhtNYxvqjnl7o
-        aLBox7LhcGg5y1BhmTGWWckyJrDsYhkzWHawjDkskS3jAktUy7jCEs0y7rBoLSPBbDgcZhJmWAaWYtnx
-        eDT02rNYLNCBWQqW3kj61XVerxcVmK1g0cL+VF7CEnkx26dfl+d5TbNKpRLqs8+zwzT3Jv9pqhbgkgM0
-        ldq17P00/bAdpdlsSmB341mn09HejqIcXS6XEI1GvxpaPB6H1Wqliv1Uu8Lur5hOp9cVwfV6HWq1Glpm
-        sUXvVftJ30geDAYwn8/fBsdvYRkKq21c6BfMAdV+hRN8AQAAAABJRU5ErkJggg==
-=======
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOuQAA
-        DrkBuAYXvwAAAp5JREFUaEPt20HLAUEYB/AtiqIkuVN8AgefQL6DG8pRUg5OJCU3uUh8AB9AbspJyVWu
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAOrQAA
+        Dq0BDu+AZwAAAp5JREFUaEPt20HLAUEYB/AtiqIkuVN8AgefQL6DG8pRUg5OJCU3uUh8AB9AbspJyVWu
         zriIm+J5G7XCLvad2WdmZ62ai3dnd+fnv7PP7rurgPMxLKC8W/J6vcJ4PIZOpwO1Ws32jYxzMpl8hNNg
         TadT8Hg8oCjKz7ZAIADz+VwD94SVz+d/FkgvHMVi8QnsjrXdbh0onaPpcDjcwe5YuVzOwdLBIkeb+rlj
         pVIpB0sHi7hosNLptIOlg0VcHCyDZ3sHyyAUOUNaDovUdaVSCbLZrOFWKBSg1+uB2+1GnT4shZXJZAxf
@@ -251,7 +188,6 @@
         S3QwS2EZraTfLefz+VDBbIXFiv2tv4Ml88Ns335dkX/XTVa5XEY99kUOmGXb5H+amgdwyRcsK7Vr38fT
         9NPrKK1WywF7mM+63a7+6yjqt6vVCmKx2E+jJRIJWK/Xmtrv7St0ZMnZbHZ7IrjRaEC9XkdrPF7Re7f/
         ZGykDYdDWCwWH4vjj1hUZbWNO/0BcZH8ZKS5byoAAAAASUVORK5CYII=
->>>>>>> origin/Miguel's-Work
 </value>
   </data>
 </root>

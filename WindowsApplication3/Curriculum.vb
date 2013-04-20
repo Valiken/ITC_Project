@@ -51,4 +51,23 @@
         End Set
     End Property
 
+    Public Function returnAllCourseID() As ArrayList
+        Dim result As New ArrayList
+        Dim nullCourse As String
+
+        For Each nullCourse In m_electiveCore.Courses
+            result.Add(nullCourse)
+        Next
+
+        For Each nullCourse In m_requiredCore.Courses
+            result.Add(nullCourse)
+        Next
+
+        For Each nullCourse In m_requiredGE.Courses
+            result.Add(nullCourse)
+        Next
+
+        Return result
+    End Function
+
 End Class

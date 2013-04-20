@@ -166,13 +166,22 @@ Public Class DataGenerator
 
         Dim mylist As ArrayList = myGenerator.generateStudents
         Dim mycollection As Collection = Controller.getStudentDB
+        Dim myschedcollection As Collection = Controller.getScheduleDB
+        'nuke old data
+        mycollection.Clear
+        myschedcollection.Clear
+
         For Each st As Student In mylist
             'testbox.Text += st.ID + " " + st.Name + vbNewLine
             mycollection.add(st,st.ID)
         Next
-        For Each st As Student In Controller.getStudentDB
-            testbox.Text += st.ID + " " + st.Name + vbNewLine
+        For Each sched As Schedule In myGenerator.SchedulesGenerated
+            myschedcollection.add(sched, sched.ScheduleID)
         Next
+        MessageBox.Show("Students have been generated")
+        MDIParentForm.CurriculumViewToolStripMenuItem.Enabled = True
+        MDIParentForm.StudentsViewToolStripMenuItem.Enabled = True
+        MDIParentForm.SchedulesViewToolStripMenuItem.Enabled = True
 
 
     End Sub
@@ -347,6 +356,7 @@ Public Class DataGenerator
                 stringReader = reader.ReadLine()
             End While
             updateComboBox()
+            cboCurriculumYear.SelectedIndex = 0
         Else
             MessageBox.Show("Please browse for a file before importing")
         End If
@@ -454,6 +464,10 @@ Public Class DataGenerator
         Dim currentReqCoreCourse As ArrayList = currentRegCore.Courses
         Dim currentElectiveCourse As ArrayList = currentElective.Courses
 
+        currentReqGECourse.Sort()
+        currentReqCoreCourse.Sort()
+        currentElectiveCourse.Sort()
+
         Dim nullString As String = ""
 
         For Each nullString In currentReqGECourse
@@ -540,15 +554,9 @@ Public Class DataGenerator
 
     End Sub
 
-    Private Sub btnStudentBrowse_Click(sender As Object, e As EventArgs) Handles btnStudentBrowse.Click
-        txtCurriculumFileSrc.Enabled = True
-        Dim fbd As New OpenFileDialog
-        If fbd.ShowDialog = DialogResult.OK Then
-            txtStudentFileSrc.Text = fbd.FileName
-        End If
-    End Sub
+  
 
-    Private Sub btnRoomsGenerate_Click(sender As Object, e As EventArgs) Handles btnRoomsGenerate.Click
+    Private Sub btnRoomsGenerate_Click(sender As Object, e As EventArgs)
         Dim studentsPerRoom As Integer = nudRoomsStudents.Value
         Dim numberOfRooms As Integer = nudRoomsAvailable.Value
         Dim roomNumber As String = ""

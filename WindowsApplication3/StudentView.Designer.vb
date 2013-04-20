@@ -57,7 +57,7 @@ Partial Class StudentView
         Me.lbxStudentList.FormattingEnabled = True
         Me.lbxStudentList.Location = New System.Drawing.Point(39, 88)
         Me.lbxStudentList.Name = "lbxStudentList"
-        Me.lbxStudentList.Size = New System.Drawing.Size(120, 95)
+        Me.lbxStudentList.Size = New System.Drawing.Size(120, 394)
         Me.lbxStudentList.TabIndex = 0
         '
         'lblStudentList
@@ -73,7 +73,7 @@ Partial Class StudentView
         'lblStudentName
         '
         Me.lblStudentName.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStudentName.Location = New System.Drawing.Point(341, 20)
+        Me.lblStudentName.Location = New System.Drawing.Point(340, 20)
         Me.lblStudentName.Name = "lblStudentName"
         Me.lblStudentName.Size = New System.Drawing.Size(300, 25)
         Me.lblStudentName.TabIndex = 14
@@ -92,11 +92,11 @@ Partial Class StudentView
         'lblExpectedGraduation
         '
         Me.lblExpectedGraduation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblExpectedGraduation.Location = New System.Drawing.Point(346, 89)
+        Me.lblExpectedGraduation.Location = New System.Drawing.Point(367, 90)
         Me.lblExpectedGraduation.Name = "lblExpectedGraduation"
         Me.lblExpectedGraduation.Size = New System.Drawing.Size(330, 25)
         Me.lblExpectedGraduation.TabIndex = 16
-        Me.lblExpectedGraduation.Text = "Expected Graduation Date: Spring 2015"
+        Me.lblExpectedGraduation.Text = "Expected Graduation Date: 2015"
         '
         'lblAcademicStats
         '

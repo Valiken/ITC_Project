@@ -32,7 +32,6 @@ Partial Class CurriculumMetericView
         Me.lbxCurriculum = New System.Windows.Forms.ListBox()
         Me.lblCurriculumTitle = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.lblAvgGPA = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lblAvgRemaining = New System.Windows.Forms.Label()
         Me.lblAvgUnits = New System.Windows.Forms.Label()
@@ -44,9 +43,9 @@ Partial Class CurriculumMetericView
         Me.lblMinTime = New System.Windows.Forms.Label()
         Me.lblMetricsTitle = New System.Windows.Forms.Label()
         Me.lblGrad = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblDropOut = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.lstBoxTest = New System.Windows.Forms.ListBox()
+        Me.lblStdTotal = New System.Windows.Forms.Label()
         Me.TabPage2.SuspendLayout()
         Me.ClassBox.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -57,7 +56,6 @@ Partial Class CurriculumMetericView
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.lstBoxTest)
         Me.TabPage2.Controls.Add(Me.Label8)
         Me.TabPage2.Controls.Add(Me.cmbxCurriclum)
         Me.TabPage2.Controls.Add(Me.ClassBox)
@@ -158,12 +156,11 @@ Partial Class CurriculumMetericView
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.lblAvgGPA)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Controls.Add(Me.lblMetricsTitle)
         Me.TabPage1.Controls.Add(Me.lblGrad)
-        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.lblDropOut)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -171,16 +168,6 @@ Partial Class CurriculumMetericView
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Metrics View "
         Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'lblAvgGPA
-        '
-        Me.lblAvgGPA.AutoSize = True
-        Me.lblAvgGPA.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.lblAvgGPA.Location = New System.Drawing.Point(234, 40)
-        Me.lblAvgGPA.Name = "lblAvgGPA"
-        Me.lblAvgGPA.Size = New System.Drawing.Size(75, 13)
-        Me.lblAvgGPA.TabIndex = 12
-        Me.lblAvgGPA.Text = "Average GPA:"
         '
         'GroupBox2
         '
@@ -237,6 +224,7 @@ Partial Class CurriculumMetericView
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.lblStdTotal)
         Me.GroupBox1.Controls.Add(Me.lblAvgTime)
         Me.GroupBox1.Controls.Add(Me.lblMaxTime)
         Me.GroupBox1.Controls.Add(Me.lblMinTime)
@@ -298,15 +286,15 @@ Partial Class CurriculumMetericView
         Me.lblGrad.TabIndex = 1
         Me.lblGrad.Text = "Number of Graduated Students: "
         '
-        'Label3
+        'lblDropOut
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.Label3.Location = New System.Drawing.Point(10, 62)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Number of Drop Outs: "
+        Me.lblDropOut.AutoSize = True
+        Me.lblDropOut.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.lblDropOut.Location = New System.Drawing.Point(10, 62)
+        Me.lblDropOut.Name = "lblDropOut"
+        Me.lblDropOut.Size = New System.Drawing.Size(113, 13)
+        Me.lblDropOut.TabIndex = 2
+        Me.lblDropOut.Text = "Number of Drop Outs: "
         '
         'TabControl1
         '
@@ -318,19 +306,21 @@ Partial Class CurriculumMetericView
         Me.TabControl1.Size = New System.Drawing.Size(809, 593)
         Me.TabControl1.TabIndex = 10
         '
-        'lstBoxTest
+        'lblStdTotal
         '
-        Me.lstBoxTest.FormattingEnabled = True
-        Me.lstBoxTest.Location = New System.Drawing.Point(157, 180)
-        Me.lstBoxTest.Name = "lstBoxTest"
-        Me.lstBoxTest.Size = New System.Drawing.Size(218, 316)
-        Me.lstBoxTest.TabIndex = 21
+        Me.lblStdTotal.AutoSize = True
+        Me.lblStdTotal.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.lblStdTotal.Location = New System.Drawing.Point(6, 83)
+        Me.lblStdTotal.Name = "lblStdTotal"
+        Me.lblStdTotal.Size = New System.Drawing.Size(74, 13)
+        Me.lblStdTotal.TabIndex = 22
+        Me.lblStdTotal.Text = "Student Total:"
         '
         'CurriculumMetericView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(820, 591)
+        Me.ClientSize = New System.Drawing.Size(807, 591)
         Me.Controls.Add(Me.TabControl1)
         Me.ForeColor = System.Drawing.SystemColors.Window
         Me.Name = "CurriculumMetericView"
@@ -362,10 +352,9 @@ Partial Class CurriculumMetericView
     Friend WithEvents lblMinTime As System.Windows.Forms.Label
     Friend WithEvents lblMetricsTitle As System.Windows.Forms.Label
     Friend WithEvents lblGrad As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblDropOut As System.Windows.Forms.Label
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents lblCurriculumTitle As System.Windows.Forms.Label
-    Friend WithEvents lblAvgGPA As System.Windows.Forms.Label
     Friend WithEvents lbxCurriculum As System.Windows.Forms.ListBox
     Friend WithEvents lblUnit As System.Windows.Forms.Label
     Friend WithEvents lblPrereq As System.Windows.Forms.Label
@@ -373,5 +362,5 @@ Partial Class CurriculumMetericView
     Friend WithEvents ClassBox As System.Windows.Forms.GroupBox
     Friend WithEvents cmbxCurriclum As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents lstBoxTest As System.Windows.Forms.ListBox
+    Friend WithEvents lblStdTotal As System.Windows.Forms.Label
 End Class

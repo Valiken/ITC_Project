@@ -34,7 +34,6 @@ Partial Class MDIParentForm
         Me.SchedulesViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TESTDATAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.WindowsMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -61,7 +60,7 @@ Partial Class MDIParentForm
         '
         'FileMenu
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.ToolStripSeparator3, Me.ExitToolStripMenuItem, Me.TESTDATAToolStripMenuItem})
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.ToolStripSeparator3, Me.ExitToolStripMenuItem})
         Me.FileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.FileMenu.Name = "FileMenu"
         Me.FileMenu.Size = New System.Drawing.Size(37, 20)
@@ -85,18 +84,21 @@ Partial Class MDIParentForm
         '
         'StudentsViewToolStripMenuItem
         '
+        Me.StudentsViewToolStripMenuItem.Enabled = False
         Me.StudentsViewToolStripMenuItem.Name = "StudentsViewToolStripMenuItem"
         Me.StudentsViewToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.StudentsViewToolStripMenuItem.Text = "Student's View"
         '
         'CurriculumViewToolStripMenuItem
         '
+        Me.CurriculumViewToolStripMenuItem.Enabled = False
         Me.CurriculumViewToolStripMenuItem.Name = "CurriculumViewToolStripMenuItem"
         Me.CurriculumViewToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.CurriculumViewToolStripMenuItem.Text = "Curriculum's View"
         '
         'SchedulesViewToolStripMenuItem
         '
+        Me.SchedulesViewToolStripMenuItem.Enabled = False
         Me.SchedulesViewToolStripMenuItem.Name = "SchedulesViewToolStripMenuItem"
         Me.SchedulesViewToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.SchedulesViewToolStripMenuItem.Text = "Schedule's View"
@@ -111,12 +113,6 @@ Partial Class MDIParentForm
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "E&xit"
-        '
-        'TESTDATAToolStripMenuItem
-        '
-        Me.TESTDATAToolStripMenuItem.Name = "TESTDATAToolStripMenuItem"
-        Me.TESTDATAToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.TESTDATAToolStripMenuItem.Text = "TEST DATA"
         '
         'WindowsMenu
         '
@@ -178,16 +174,17 @@ Partial Class MDIParentForm
         '
         'MDIParentForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(632, 453)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
-        Me.IsMdiContainer = true
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "MDIParentForm"
-        Me.Text = "Program Name"
-        Me.MenuStrip.ResumeLayout(false)
+        Me.Text = "Poly Sharp: KSU Schedule Generator"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout
         Me.StatusStrip.ResumeLayout(false)
         Me.StatusStrip.PerformLayout
@@ -210,7 +207,6 @@ End Sub
     Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TESTDATAToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DataImplementationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StudentsViewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CurriculumViewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

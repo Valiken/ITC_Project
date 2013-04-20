@@ -63,8 +63,7 @@ Partial Class DataGenerator
         Me.txtCurriculumFileSrc = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Students = New System.Windows.Forms.TabPage()
-        Me.lblStudentsGenerated = New System.Windows.Forms.Label()
-        Me.lbl = New System.Windows.Forms.Label()
+        Me.lblCurriculumDist = New System.Windows.Forms.Label()
         Me.txtCurriculumDist = New System.Windows.Forms.TextBox()
         Me.cbxCurriculumYear = New System.Windows.Forms.ComboBox()
         Me.lblCurriculumYear = New System.Windows.Forms.Label()
@@ -79,21 +78,12 @@ Partial Class DataGenerator
         Me.lblNumberofStudents = New System.Windows.Forms.Label()
         Me.cbxCurrentQuarter = New System.Windows.Forms.ComboBox()
         Me.chkRandClassGen = New System.Windows.Forms.CheckBox()
-        Me.testbox = New System.Windows.Forms.TextBox()
         Me.btnRandomGenerate = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnStudentBrowse = New System.Windows.Forms.Button()
-        Me.txtStudentFileSrc = New System.Windows.Forms.TextBox()
-        Me.Rooms = New System.Windows.Forms.TabPage()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.nudRoomsStudents = New System.Windows.Forms.NumericUpDown()
         Me.nudRoomsAvailable = New System.Windows.Forms.NumericUpDown()
-        Me.btnRoomsGenerate = New System.Windows.Forms.Button()
+        Me.nudRoomsStudents = New System.Windows.Forms.NumericUpDown()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.btnRoomsBrowse = New System.Windows.Forms.Button()
-        Me.txtRoomsFileSrc = New System.Windows.Forms.TextBox()
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.btnRoomsGenerate = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.Classes.SuspendLayout()
         CType(Me.nudClassesUnits, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,9 +93,8 @@ Partial Class DataGenerator
         CType(Me.nudCurrentYear, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudDropRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudNumberofStudentsgenerated, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Rooms.SuspendLayout()
-        CType(Me.nudRoomsStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudRoomsAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudRoomsStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -113,7 +102,6 @@ Partial Class DataGenerator
         Me.TabControl1.Controls.Add(Me.Classes)
         Me.TabControl1.Controls.Add(Me.Curriculum)
         Me.TabControl1.Controls.Add(Me.Students)
-        Me.TabControl1.Controls.Add(Me.Rooms)
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -122,6 +110,11 @@ Partial Class DataGenerator
         '
         'Classes
         '
+        Me.Classes.Controls.Add(Me.btnRoomsGenerate)
+        Me.Classes.Controls.Add(Me.Label13)
+        Me.Classes.Controls.Add(Me.Label2)
+        Me.Classes.Controls.Add(Me.nudRoomsStudents)
+        Me.Classes.Controls.Add(Me.nudRoomsAvailable)
         Me.Classes.Controls.Add(Me.btnClassesImport)
         Me.Classes.Controls.Add(Me.Label5)
         Me.Classes.Controls.Add(Me.Button3)
@@ -159,15 +152,15 @@ Partial Class DataGenerator
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(330, 46)
+        Me.Label5.Location = New System.Drawing.Point(361, 51)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(184, 15)
+        Me.Label5.Size = New System.Drawing.Size(103, 15)
         Me.Label5.TabIndex = 20
-        Me.Label5.Text = "Courses Added to Database"
+        Me.Label5.Text = "Courses Added"
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(428, 353)
+        Me.Button3.Location = New System.Drawing.Point(428, 360)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(97, 23)
         Me.Button3.TabIndex = 19
@@ -177,14 +170,14 @@ Partial Class DataGenerator
         'lboxClassesCourses
         '
         Me.lboxClassesCourses.FormattingEnabled = True
-        Me.lboxClassesCourses.Location = New System.Drawing.Point(327, 64)
+        Me.lboxClassesCourses.Location = New System.Drawing.Point(327, 69)
         Me.lboxClassesCourses.Name = "lboxClassesCourses"
         Me.lboxClassesCourses.Size = New System.Drawing.Size(198, 277)
         Me.lboxClassesCourses.TabIndex = 18
         '
         'btnClassesAddClass
         '
-        Me.btnClassesAddClass.Location = New System.Drawing.Point(327, 353)
+        Me.btnClassesAddClass.Location = New System.Drawing.Point(327, 360)
         Me.btnClassesAddClass.Name = "btnClassesAddClass"
         Me.btnClassesAddClass.Size = New System.Drawing.Size(97, 23)
         Me.btnClassesAddClass.TabIndex = 17
@@ -194,7 +187,7 @@ Partial Class DataGenerator
         'txtClassesPrerequisites
         '
         Me.txtClassesPrerequisites.Enabled = False
-        Me.txtClassesPrerequisites.Location = New System.Drawing.Point(137, 275)
+        Me.txtClassesPrerequisites.Location = New System.Drawing.Point(149, 231)
         Me.txtClassesPrerequisites.Name = "txtClassesPrerequisites"
         Me.txtClassesPrerequisites.Size = New System.Drawing.Size(100, 20)
         Me.txtClassesPrerequisites.TabIndex = 16
@@ -203,7 +196,7 @@ Partial Class DataGenerator
         '
         Me.cboxClassesPrerequisites.AutoSize = True
         Me.cboxClassesPrerequisites.Enabled = False
-        Me.cboxClassesPrerequisites.Location = New System.Drawing.Point(114, 249)
+        Me.cboxClassesPrerequisites.Location = New System.Drawing.Point(126, 205)
         Me.cboxClassesPrerequisites.Name = "cboxClassesPrerequisites"
         Me.cboxClassesPrerequisites.Size = New System.Drawing.Size(86, 17)
         Me.cboxClassesPrerequisites.TabIndex = 15
@@ -213,7 +206,7 @@ Partial Class DataGenerator
         'txtClassesCompanion
         '
         Me.txtClassesCompanion.Enabled = False
-        Me.txtClassesCompanion.Location = New System.Drawing.Point(137, 207)
+        Me.txtClassesCompanion.Location = New System.Drawing.Point(149, 167)
         Me.txtClassesCompanion.Name = "txtClassesCompanion"
         Me.txtClassesCompanion.Size = New System.Drawing.Size(100, 20)
         Me.txtClassesCompanion.TabIndex = 14
@@ -222,7 +215,7 @@ Partial Class DataGenerator
         '
         Me.cboxClassesCompanion.AutoSize = True
         Me.cboxClassesCompanion.Enabled = False
-        Me.cboxClassesCompanion.Location = New System.Drawing.Point(114, 181)
+        Me.cboxClassesCompanion.Location = New System.Drawing.Point(126, 141)
         Me.cboxClassesCompanion.Name = "cboxClassesCompanion"
         Me.cboxClassesCompanion.Size = New System.Drawing.Size(107, 17)
         Me.cboxClassesCompanion.TabIndex = 13
@@ -232,7 +225,7 @@ Partial Class DataGenerator
         'nudClassesUnits
         '
         Me.nudClassesUnits.Enabled = False
-        Me.nudClassesUnits.Location = New System.Drawing.Point(139, 139)
+        Me.nudClassesUnits.Location = New System.Drawing.Point(151, 106)
         Me.nudClassesUnits.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
         Me.nudClassesUnits.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudClassesUnits.Name = "nudClassesUnits"
@@ -245,7 +238,7 @@ Partial Class DataGenerator
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(93, 139)
+        Me.Label8.Location = New System.Drawing.Point(105, 106)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(40, 15)
         Me.Label8.TabIndex = 11
@@ -253,7 +246,7 @@ Partial Class DataGenerator
         '
         'txtCourseName
         '
-        Me.txtCourseName.Location = New System.Drawing.Point(137, 99)
+        Me.txtCourseName.Location = New System.Drawing.Point(149, 69)
         Me.txtCourseName.Name = "txtCourseName"
         Me.txtCourseName.Size = New System.Drawing.Size(100, 20)
         Me.txtCourseName.TabIndex = 4
@@ -262,7 +255,7 @@ Partial Class DataGenerator
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(37, 100)
+        Me.Label4.Location = New System.Drawing.Point(49, 70)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(94, 15)
         Me.Label4.TabIndex = 3
@@ -329,9 +322,9 @@ Partial Class DataGenerator
         '
         Me.btnCurriculumNew.Location = New System.Drawing.Point(21, 47)
         Me.btnCurriculumNew.Name = "btnCurriculumNew"
-        Me.btnCurriculumNew.Size = New System.Drawing.Size(166, 43)
+        Me.btnCurriculumNew.Size = New System.Drawing.Size(117, 23)
         Me.btnCurriculumNew.TabIndex = 34
-        Me.btnCurriculumNew.Text = "Create New Curriculum"
+        Me.btnCurriculumNew.Text = "Create New"
         Me.btnCurriculumNew.UseVisualStyleBackColor = True
         '
         'cboCurriculumYear
@@ -440,11 +433,11 @@ Partial Class DataGenerator
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(24, 93)
+        Me.Label6.Location = New System.Drawing.Point(52, 93)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(144, 15)
+        Me.Label6.Size = New System.Drawing.Size(59, 15)
         Me.Label6.TabIndex = 21
-        Me.Label6.Text = "Courses on Database"
+        Me.Label6.Text = "Courses"
         '
         'btnCurriculumAddGE
         '
@@ -509,8 +502,7 @@ Partial Class DataGenerator
         '
         'Students
         '
-        Me.Students.Controls.Add(Me.lblStudentsGenerated)
-        Me.Students.Controls.Add(Me.lbl)
+        Me.Students.Controls.Add(Me.lblCurriculumDist)
         Me.Students.Controls.Add(Me.txtCurriculumDist)
         Me.Students.Controls.Add(Me.cbxCurriculumYear)
         Me.Students.Controls.Add(Me.lblCurriculumYear)
@@ -525,11 +517,7 @@ Partial Class DataGenerator
         Me.Students.Controls.Add(Me.lblNumberofStudents)
         Me.Students.Controls.Add(Me.cbxCurrentQuarter)
         Me.Students.Controls.Add(Me.chkRandClassGen)
-        Me.Students.Controls.Add(Me.testbox)
         Me.Students.Controls.Add(Me.btnRandomGenerate)
-        Me.Students.Controls.Add(Me.Label2)
-        Me.Students.Controls.Add(Me.btnStudentBrowse)
-        Me.Students.Controls.Add(Me.txtStudentFileSrc)
         Me.Students.Location = New System.Drawing.Point(4, 22)
         Me.Students.Name = "Students"
         Me.Students.Size = New System.Drawing.Size(574, 419)
@@ -537,23 +525,14 @@ Partial Class DataGenerator
         Me.Students.Text = "Students"
         Me.Students.UseVisualStyleBackColor = True
         '
-        'lblStudentsGenerated
+        'lblCurriculumDist
         '
-        Me.lblStudentsGenerated.AutoSize = True
-        Me.lblStudentsGenerated.Location = New System.Drawing.Point(327, 61)
-        Me.lblStudentsGenerated.Name = "lblStudentsGenerated"
-        Me.lblStudentsGenerated.Size = New System.Drawing.Size(102, 13)
-        Me.lblStudentsGenerated.TabIndex = 22
-        Me.lblStudentsGenerated.Text = "Generated Students"
-        '
-        'lbl
-        '
-        Me.lbl.AutoSize = True
-        Me.lbl.Location = New System.Drawing.Point(173, 52)
-        Me.lbl.Name = "lbl"
-        Me.lbl.Size = New System.Drawing.Size(106, 13)
-        Me.lbl.TabIndex = 21
-        Me.lbl.Text = "Curriculum Dist(%) for"
+        Me.lblCurriculumDist.AutoSize = True
+        Me.lblCurriculumDist.Location = New System.Drawing.Point(173, 52)
+        Me.lblCurriculumDist.Name = "lblCurriculumDist"
+        Me.lblCurriculumDist.Size = New System.Drawing.Size(128, 13)
+        Me.lblCurriculumDist.TabIndex = 21
+        Me.lblCurriculumDist.Text = "Curriculum Distribution (%)"
         '
         'txtCurriculumDist
         '
@@ -681,19 +660,10 @@ Partial Class DataGenerator
         Me.chkRandClassGen.AutoSize = True
         Me.chkRandClassGen.Location = New System.Drawing.Point(29, 251)
         Me.chkRandClassGen.Name = "chkRandClassGen"
-        Me.chkRandClassGen.Size = New System.Drawing.Size(149, 17)
+        Me.chkRandClassGen.Size = New System.Drawing.Size(162, 17)
         Me.chkRandClassGen.TabIndex = 7
-        Me.chkRandClassGen.Text = "Random Class Generation"
+        Me.chkRandClassGen.Text = "Random Classes Per Quarter"
         Me.chkRandClassGen.UseVisualStyleBackColor = True
-        '
-        'testbox
-        '
-        Me.testbox.Location = New System.Drawing.Point(327, 80)
-        Me.testbox.Multiline = True
-        Me.testbox.Name = "testbox"
-        Me.testbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.testbox.Size = New System.Drawing.Size(232, 265)
-        Me.testbox.TabIndex = 6
         '
         'btnRandomGenerate
         '
@@ -704,138 +674,58 @@ Partial Class DataGenerator
         Me.btnRandomGenerate.Text = "Generate!"
         Me.btnRandomGenerate.UseVisualStyleBackColor = True
         '
-        'Label2
+        'nudRoomsAvailable
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 17)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(94, 16)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Import a File"
-        '
-        'btnStudentBrowse
-        '
-        Me.btnStudentBrowse.Location = New System.Drawing.Point(366, 10)
-        Me.btnStudentBrowse.Name = "btnStudentBrowse"
-        Me.btnStudentBrowse.Size = New System.Drawing.Size(75, 23)
-        Me.btnStudentBrowse.TabIndex = 3
-        Me.btnStudentBrowse.Text = "Browse"
-        Me.btnStudentBrowse.UseVisualStyleBackColor = True
-        '
-        'txtStudentFileSrc
-        '
-        Me.txtStudentFileSrc.Location = New System.Drawing.Point(106, 12)
-        Me.txtStudentFileSrc.Name = "txtStudentFileSrc"
-        Me.txtStudentFileSrc.Size = New System.Drawing.Size(254, 20)
-        Me.txtStudentFileSrc.TabIndex = 2
-        '
-        'Rooms
-        '
-        Me.Rooms.Controls.Add(Me.Label15)
-        Me.Rooms.Controls.Add(Me.Label14)
-        Me.Rooms.Controls.Add(Me.nudRoomsStudents)
-        Me.Rooms.Controls.Add(Me.nudRoomsAvailable)
-        Me.Rooms.Controls.Add(Me.btnRoomsGenerate)
-        Me.Rooms.Controls.Add(Me.Label13)
-        Me.Rooms.Controls.Add(Me.btnRoomsBrowse)
-        Me.Rooms.Controls.Add(Me.txtRoomsFileSrc)
-        Me.Rooms.Location = New System.Drawing.Point(4, 22)
-        Me.Rooms.Name = "Rooms"
-        Me.Rooms.Size = New System.Drawing.Size(574, 419)
-        Me.Rooms.TabIndex = 3
-        Me.Rooms.Text = "Rooms"
-        Me.Rooms.UseVisualStyleBackColor = True
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(23, 126)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(215, 16)
-        Me.Label15.TabIndex = 12
-        Me.Label15.Text = "How many students per room?"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(23, 100)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(203, 16)
-        Me.Label14.TabIndex = 11
-        Me.Label14.Text = "How many rooms available?"
+        Me.nudRoomsAvailable.Location = New System.Drawing.Point(149, 282)
+        Me.nudRoomsAvailable.Name = "nudRoomsAvailable"
+        Me.nudRoomsAvailable.Size = New System.Drawing.Size(100, 20)
+        Me.nudRoomsAvailable.TabIndex = 22
+        Me.nudRoomsAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.nudRoomsAvailable.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'nudRoomsStudents
         '
-        Me.nudRoomsStudents.Location = New System.Drawing.Point(257, 122)
-        Me.nudRoomsStudents.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.nudRoomsStudents.Location = New System.Drawing.Point(149, 329)
         Me.nudRoomsStudents.Name = "nudRoomsStudents"
-        Me.nudRoomsStudents.Size = New System.Drawing.Size(120, 20)
-        Me.nudRoomsStudents.TabIndex = 10
+        Me.nudRoomsStudents.Size = New System.Drawing.Size(100, 20)
+        Me.nudRoomsStudents.TabIndex = 23
         Me.nudRoomsStudents.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.nudRoomsStudents.Value = New Decimal(New Integer() {30, 0, 0, 0})
         '
-        'nudRoomsAvailable
+        'Label2
         '
-        Me.nudRoomsAvailable.Location = New System.Drawing.Point(257, 96)
-        Me.nudRoomsAvailable.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
-        Me.nudRoomsAvailable.Name = "nudRoomsAvailable"
-        Me.nudRoomsAvailable.Size = New System.Drawing.Size(120, 20)
-        Me.nudRoomsAvailable.TabIndex = 9
-        Me.nudRoomsAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.nudRoomsAvailable.Value = New Decimal(New Integer() {40, 0, 0, 0})
-        '
-        'btnRoomsGenerate
-        '
-        Me.btnRoomsGenerate.Location = New System.Drawing.Point(216, 202)
-        Me.btnRoomsGenerate.Name = "btnRoomsGenerate"
-        Me.btnRoomsGenerate.Size = New System.Drawing.Size(75, 23)
-        Me.btnRoomsGenerate.TabIndex = 8
-        Me.btnRoomsGenerate.Text = "Generate"
-        Me.btnRoomsGenerate.UseVisualStyleBackColor = True
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(69, 264)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(180, 15)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "Number of rooms available"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(6, 17)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(55, 311)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(94, 16)
-        Me.Label13.TabIndex = 7
-        Me.Label13.Text = "Import a File"
+        Me.Label13.Size = New System.Drawing.Size(194, 15)
+        Me.Label13.TabIndex = 25
+        Me.Label13.Text = "Number of students per room"
         '
-        'btnRoomsBrowse
+        'btnRoomsGenerate
         '
-        Me.btnRoomsBrowse.Location = New System.Drawing.Point(366, 10)
-        Me.btnRoomsBrowse.Name = "btnRoomsBrowse"
-        Me.btnRoomsBrowse.Size = New System.Drawing.Size(75, 23)
-        Me.btnRoomsBrowse.TabIndex = 6
-        Me.btnRoomsBrowse.Text = "Browse"
-        Me.btnRoomsBrowse.UseVisualStyleBackColor = True
-        '
-        'txtRoomsFileSrc
-        '
-        Me.txtRoomsFileSrc.Enabled = False
-        Me.txtRoomsFileSrc.Location = New System.Drawing.Point(106, 12)
-        Me.txtRoomsFileSrc.Name = "txtRoomsFileSrc"
-        Me.txtRoomsFileSrc.Size = New System.Drawing.Size(254, 20)
-        Me.txtRoomsFileSrc.TabIndex = 5
-        '
-        'ProgressBar1
-        '
-        Me.ProgressBar1.Location = New System.Drawing.Point(16, 475)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(578, 23)
-        Me.ProgressBar1.TabIndex = 1
+        Me.btnRoomsGenerate.Location = New System.Drawing.Point(149, 360)
+        Me.btnRoomsGenerate.Name = "btnRoomsGenerate"
+        Me.btnRoomsGenerate.Size = New System.Drawing.Size(97, 23)
+        Me.btnRoomsGenerate.TabIndex = 26
+        Me.btnRoomsGenerate.Text = "Generate Rooms"
+        Me.btnRoomsGenerate.UseVisualStyleBackColor = True
         '
         'DataGenerator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(655, 543)
-        Me.Controls.Add(Me.ProgressBar1)
+        Me.ClientSize = New System.Drawing.Size(655, 485)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "DataGenerator"
         Me.Text = "DataGenerator"
@@ -851,10 +741,8 @@ Partial Class DataGenerator
         CType(Me.nudCurrentYear, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudDropRate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudNumberofStudentsgenerated, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Rooms.ResumeLayout(False)
-        Me.Rooms.PerformLayout()
-        CType(Me.nudRoomsStudents, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudRoomsAvailable, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudRoomsStudents, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -870,9 +758,6 @@ Partial Class DataGenerator
     Friend WithEvents txtCurriculumFileSrc As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Students As System.Windows.Forms.TabPage
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents btnStudentBrowse As System.Windows.Forms.Button
-    Friend WithEvents txtStudentFileSrc As System.Windows.Forms.TextBox
     Friend WithEvents txtClassesPrerequisites As System.Windows.Forms.TextBox
     Friend WithEvents cboxClassesPrerequisites As System.Windows.Forms.CheckBox
     Friend WithEvents txtClassesCompanion As System.Windows.Forms.TextBox
@@ -896,23 +781,12 @@ Partial Class DataGenerator
     Friend WithEvents btnCurriculumAddElectives As System.Windows.Forms.Button
     Friend WithEvents btnCurriculumAddCore As System.Windows.Forms.Button
     Friend WithEvents btnRandomGenerate As System.Windows.Forms.Button
-    Friend WithEvents testbox As System.Windows.Forms.TextBox
     Friend WithEvents btnClassesImport As System.Windows.Forms.Button
     Friend WithEvents btnCurriculumImport As System.Windows.Forms.Button
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents cboCurriculumYear As System.Windows.Forms.ComboBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents btnCurriculumNew As System.Windows.Forms.Button
-    Friend WithEvents Rooms As System.Windows.Forms.TabPage
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents btnRoomsBrowse As System.Windows.Forms.Button
-    Friend WithEvents txtRoomsFileSrc As System.Windows.Forms.TextBox
-    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
-    Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents nudRoomsStudents As System.Windows.Forms.NumericUpDown
-    Friend WithEvents nudRoomsAvailable As System.Windows.Forms.NumericUpDown
-    Friend WithEvents btnRoomsGenerate As System.Windows.Forms.Button
     Friend WithEvents cbxCurriculumYear As System.Windows.Forms.ComboBox
     Friend WithEvents lblCurriculumYear As System.Windows.Forms.Label
     Friend WithEvents nudClassesPerQuarter As System.Windows.Forms.NumericUpDown
@@ -926,7 +800,11 @@ Partial Class DataGenerator
     Friend WithEvents lblNumberofStudents As System.Windows.Forms.Label
     Friend WithEvents cbxCurrentQuarter As System.Windows.Forms.ComboBox
     Friend WithEvents chkRandClassGen As System.Windows.Forms.CheckBox
-    Friend WithEvents lbl As System.Windows.Forms.Label
+    Friend WithEvents lblCurriculumDist As System.Windows.Forms.Label
     Friend WithEvents txtCurriculumDist As System.Windows.Forms.TextBox
-    Friend WithEvents lblStudentsGenerated As System.Windows.Forms.Label
+    Friend WithEvents nudRoomsStudents As System.Windows.Forms.NumericUpDown
+    Friend WithEvents nudRoomsAvailable As System.Windows.Forms.NumericUpDown
+    Friend WithEvents btnRoomsGenerate As System.Windows.Forms.Button
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class
