@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports BusinessLogic
 
 Public Class DataGenerator
     Private tempCourseDB As Collection = Controller.getCourseDB
@@ -159,7 +160,7 @@ Public Class DataGenerator
         myGenerator.NumberOfStudents = nudNumberofStudentsgenerated.Value
         myGenerator.DropoutRate = nudDropRate.Value / 100
         myGenerator.CurrentQuarter = cbxCurrentQuarter.SelectedItem
-        myGenerator.CurrentYear = Integer.Parse(nudCurrentYear.value)
+        myGenerator.CurrentYear = Integer.Parse(nudCurrentYear.Value)
         myGenerator.RandomClassesPerQuarter = chkRandClassGen.Checked
         myGenerator.ClassesPerQuarter = nudClassesPerQuarter.Value
         myGenerator.CurriculumDistribution = curriculumDistribution
@@ -168,15 +169,15 @@ Public Class DataGenerator
         Dim mycollection As Collection = Controller.getStudentDB
         Dim myschedcollection As Collection = Controller.getScheduleDB
         'nuke old data
-        mycollection.Clear
-        myschedcollection.Clear
+        mycollection.Clear()
+        myschedcollection.Clear()
 
         For Each st As Student In mylist
             'testbox.Text += st.ID + " " + st.Name + vbNewLine
-            mycollection.add(st,st.ID)
+            mycollection.Add(st, st.ID)
         Next
         For Each sched As Schedule In myGenerator.SchedulesGenerated
-            myschedcollection.add(sched, sched.ScheduleID)
+            myschedcollection.Add(sched, sched.ScheduleID)
         Next
         MessageBox.Show("Students have been generated")
         MDIParentForm.CurriculumViewToolStripMenuItem.Enabled = True
@@ -236,7 +237,7 @@ Public Class DataGenerator
         Else
             MessageBox.Show("Please browse for a file before importing")
         End If
-        
+
     End Sub
 
     Private Sub btnCurriculumBrowse_Click(sender As Object, e As EventArgs) Handles btnCurriculumBrowse.Click
@@ -554,7 +555,7 @@ Public Class DataGenerator
 
     End Sub
 
-  
+
 
     Private Sub btnRoomsGenerate_Click(sender As Object, e As EventArgs)
         Dim studentsPerRoom As Integer = nudRoomsStudents.Value
@@ -596,29 +597,29 @@ Public Class DataGenerator
             Dim myCurricColl As Collection = Controller.getCurriculumDB
             For Each temp In myCurricColl
                 cbxCurriculumYear.Items.Add(temp.ID)
-                curriculumDistribution.Add(1.0/myCurricColl.Count)
+                curriculumDistribution.Add(1.0 / myCurricColl.Count)
             Next
             cbxCurrentQuarter.SelectedIndex = 2
-            cbxCurriculumYear.SelectedIndex = cbxCurriculumYear.Items.Count -1
+            cbxCurriculumYear.SelectedIndex = cbxCurriculumYear.Items.Count - 1
 
         End If
     End Sub
 
     Private Sub cbxCurriculumYear_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbxCurriculumYear.SelectedValueChanged
         txtCurriculumDist.Text = (curriculumDistribution.Item(cbxCurriculumYear.SelectedIndex) * 100).ToString
-        
+
     End Sub
 
 
     Private Sub txtCurriculumDist_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtCurriculumDist.TextChanged
-        If(Not cbxCurriculumYear.SelectedIndex = -1)
+        If (Not cbxCurriculumYear.SelectedIndex = -1) Then
             Dim result As Double
-            If(Double.TryParse(txtCurriculumDist.Text, result))
+            If (Double.TryParse(txtCurriculumDist.Text, result)) Then
                 result /= 100
                 curriculumDistribution.Item(cbxCurriculumYear.SelectedIndex) = result
             End If
         End If
-        
+
     End Sub
 
 End Class

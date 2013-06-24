@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports BusinessLogic
 
 Public Class CurriculumMetericView
 
@@ -60,11 +61,11 @@ Public Class CurriculumMetericView
         calcedDropped()
         totalStudents()
 
-    End Sub 
+    End Sub
 
     'handles user selection of different classes in the curriculum
     Private Sub lbxCurriculum_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbxCurriculum.SelectedIndexChanged
-        
+
         'displays the class box after class is selected
         ClassBox.Show()
 
@@ -83,7 +84,7 @@ Public Class CurriculumMetericView
         'displays the companion courses for a class 
         lblCompanion.Text = "Companion Course(s): " + courseList(lbxCurriculum.SelectedIndex).CompanionCourse
 
-    End Sub 
+    End Sub
 
     'Used to change the curriculum view titles 
     Public Sub titleChanges()
@@ -96,10 +97,10 @@ Public Class CurriculumMetericView
 
     'populates the curriculum
     Public Sub populateCurriculums()
-        
+
         'resets the listbox for classes in a curriculum
         lbxCurriculum.Items.Clear()
-        
+
         'These for loops go through and add the different classes into the curriculum view 
         For Each cid As String In tempCurriculum.ElectiveCourses.Courses
             tempCourse.ID = cid

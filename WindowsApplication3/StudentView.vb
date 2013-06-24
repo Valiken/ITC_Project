@@ -1,4 +1,6 @@
-﻿Public Class StudentView
+﻿Imports BusinessLogic
+
+Public Class StudentView
 
     Dim students As Collection = Controller.getStudentDB()
     Dim studentList As New List(Of Student)

@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports BusinessLogic
+
+Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCreateCurriculum.Click
 
         'Testing creating a course and adding prerequisit Course

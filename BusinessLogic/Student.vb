@@ -295,7 +295,8 @@ Public Class Student
 
         totalCoursesLeft += totalElectiveCoursesLeft
 
-        minimumQuartersLeft = totalCoursesLeft / CDbl(Integer.Parse(DataGenerator.nudClassesPerQuarter.Value))
+        'minimumQuartersLeft = totalCoursesLeft / CDbl(Integer.Parse(DataGenerator.nudClassesPerQuarter.Value))
+        minimumQuartersLeft = totalCoursesLeft / 4 'temp fix to breaking MVC
         minimumQuartersLeft = Math.Ceiling(minimumQuartersLeft)
 
         Return minimumQuartersLeft.ToString

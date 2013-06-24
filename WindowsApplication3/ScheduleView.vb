@@ -1,4 +1,6 @@
-﻿Public Class ScheduleView
+﻿Imports BusinessLogic
+
+Public Class ScheduleView
     Dim tempStudentDB As Collection = Controller.getStudentDB
     Dim quarterArray As New ArrayList
     Dim courseCollection As New Collection
@@ -359,5 +361,5 @@
         Next
     End Sub
 
-    
+
 End Class
