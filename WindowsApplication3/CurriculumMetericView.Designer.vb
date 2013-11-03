@@ -38,6 +38,7 @@ Partial Class CurriculumMetericView
         Me.lblMinUnit = New System.Windows.Forms.Label()
         Me.lblMaxUnit = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblStdTotal = New System.Windows.Forms.Label()
         Me.lblAvgTime = New System.Windows.Forms.Label()
         Me.lblMaxTime = New System.Windows.Forms.Label()
         Me.lblMinTime = New System.Windows.Forms.Label()
@@ -45,7 +46,6 @@ Partial Class CurriculumMetericView
         Me.lblGrad = New System.Windows.Forms.Label()
         Me.lblDropOut = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.lblStdTotal = New System.Windows.Forms.Label()
         Me.TabPage2.SuspendLayout()
         Me.ClassBox.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -235,6 +235,16 @@ Partial Class CurriculumMetericView
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Time Metrics"
         '
+        'lblStdTotal
+        '
+        Me.lblStdTotal.AutoSize = True
+        Me.lblStdTotal.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.lblStdTotal.Location = New System.Drawing.Point(6, 83)
+        Me.lblStdTotal.Name = "lblStdTotal"
+        Me.lblStdTotal.Size = New System.Drawing.Size(74, 13)
+        Me.lblStdTotal.TabIndex = 22
+        Me.lblStdTotal.Text = "Student Total:"
+        '
         'lblAvgTime
         '
         Me.lblAvgTime.AutoSize = True
@@ -306,16 +316,6 @@ Partial Class CurriculumMetericView
         Me.TabControl1.Size = New System.Drawing.Size(809, 593)
         Me.TabControl1.TabIndex = 10
         '
-        'lblStdTotal
-        '
-        Me.lblStdTotal.AutoSize = True
-        Me.lblStdTotal.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.lblStdTotal.Location = New System.Drawing.Point(6, 83)
-        Me.lblStdTotal.Name = "lblStdTotal"
-        Me.lblStdTotal.Size = New System.Drawing.Size(74, 13)
-        Me.lblStdTotal.TabIndex = 22
-        Me.lblStdTotal.Text = "Student Total:"
-        '
         'CurriculumMetericView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -324,7 +324,7 @@ Partial Class CurriculumMetericView
         Me.Controls.Add(Me.TabControl1)
         Me.ForeColor = System.Drawing.SystemColors.Window
         Me.Name = "CurriculumMetericView"
-        Me.Text = "Form2"
+        Me.Text = "Curriculum View"
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ClassBox.ResumeLayout(False)
