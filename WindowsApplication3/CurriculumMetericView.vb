@@ -3,6 +3,15 @@ Imports BusinessLogic
 
 Public Class CurriculumMetericView
 
+    'New coding portion as of 3/1/2014
+    Private ctrl As Controller 'Import controller
+
+    Private course As Course
+    Private student As Student
+    Private curriculum As Curriculum
+
+    Dim curriculumList As New List(Of Curriculum)
+
     'in class variables for handling data generation 
     Private m_graduatedStudents, m_droppedStudents As String
     Private m_curriculum As String
@@ -26,11 +35,12 @@ Public Class CurriculumMetericView
 
     'For dispalying curriculum centric data
     Dim curriculums As Collection = Controller.getCurriculumDB
-    Dim curriculumList As New List(Of Curriculum)
     Dim tempCurriculum As New Curriculum
 
     'handles events that occur during the view load 
     Public Sub CurriculumMetericView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ctrl = CType(MdiParent, MDIParentForm).ctrl
+
 
         'hides the classBox and then also changes the titles depending on the selected curriculum
         ClassBox.Hide()
@@ -326,7 +336,7 @@ Public Class CurriculumMetericView
         m_maxUnits = (maxUnits(unitArray)).ToString
         m_minUnits = (minUnits(unitArray)).ToString
         m_avgUnits = (avgUnits(unitArray)).ToString
-        ' m_unitsLeft = (avgUnitsRemaining()).ToString
+
 
         lblMaxUnit.Text = "Maximum units taken: " + m_maxUnits
         lblMinUnit.Text = "Minimum units taken: " + m_minUnits

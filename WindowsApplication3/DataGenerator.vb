@@ -622,4 +622,7 @@ Public Class DataGenerator
 
     End Sub
 
+    Private Sub DataGenerator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

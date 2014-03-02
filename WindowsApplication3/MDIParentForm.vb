@@ -1,6 +1,8 @@
 ﻿Imports System.Windows.Forms
+Imports BusinessLogic
 
 Public Class MDIParentForm
+    Public ctrl As New Controller
 
     Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs)
         Dim OpenFileDialog As New OpenFileDialog
@@ -123,5 +125,9 @@ Public Class MDIParentForm
         ChildForm.Text = "Schedule View"
 
         ChildForm.Show()
+    End Sub
+
+    Private Sub MDIParentForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

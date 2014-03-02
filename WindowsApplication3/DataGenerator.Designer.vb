@@ -25,6 +25,11 @@ Partial Class DataGenerator
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DataGenerator))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Classes = New System.Windows.Forms.TabPage()
+        Me.btnRoomsGenerate = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.nudRoomsStudents = New System.Windows.Forms.NumericUpDown()
+        Me.nudRoomsAvailable = New System.Windows.Forms.NumericUpDown()
         Me.btnClassesImport = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -79,13 +84,10 @@ Partial Class DataGenerator
         Me.cbxCurrentQuarter = New System.Windows.Forms.ComboBox()
         Me.chkRandClassGen = New System.Windows.Forms.CheckBox()
         Me.btnRandomGenerate = New System.Windows.Forms.Button()
-        Me.nudRoomsAvailable = New System.Windows.Forms.NumericUpDown()
-        Me.nudRoomsStudents = New System.Windows.Forms.NumericUpDown()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.btnRoomsGenerate = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.Classes.SuspendLayout()
+        CType(Me.nudRoomsStudents, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudRoomsAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudClassesUnits, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Curriculum.SuspendLayout()
         Me.Students.SuspendLayout()
@@ -93,8 +95,6 @@ Partial Class DataGenerator
         CType(Me.nudCurrentYear, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudDropRate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudNumberofStudentsgenerated, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nudRoomsAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nudRoomsStudents, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -138,6 +138,53 @@ Partial Class DataGenerator
         Me.Classes.TabIndex = 0
         Me.Classes.Text = "Classes"
         Me.Classes.UseVisualStyleBackColor = True
+        '
+        'btnRoomsGenerate
+        '
+        Me.btnRoomsGenerate.Location = New System.Drawing.Point(149, 360)
+        Me.btnRoomsGenerate.Name = "btnRoomsGenerate"
+        Me.btnRoomsGenerate.Size = New System.Drawing.Size(97, 23)
+        Me.btnRoomsGenerate.TabIndex = 26
+        Me.btnRoomsGenerate.Text = "Generate Rooms"
+        Me.btnRoomsGenerate.UseVisualStyleBackColor = True
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(55, 311)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(194, 15)
+        Me.Label13.TabIndex = 25
+        Me.Label13.Text = "Number of students per room"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(69, 264)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(180, 15)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "Number of rooms available"
+        '
+        'nudRoomsStudents
+        '
+        Me.nudRoomsStudents.Location = New System.Drawing.Point(149, 329)
+        Me.nudRoomsStudents.Name = "nudRoomsStudents"
+        Me.nudRoomsStudents.Size = New System.Drawing.Size(100, 20)
+        Me.nudRoomsStudents.TabIndex = 23
+        Me.nudRoomsStudents.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.nudRoomsStudents.Value = New Decimal(New Integer() {30, 0, 0, 0})
+        '
+        'nudRoomsAvailable
+        '
+        Me.nudRoomsAvailable.Location = New System.Drawing.Point(149, 282)
+        Me.nudRoomsAvailable.Name = "nudRoomsAvailable"
+        Me.nudRoomsAvailable.Size = New System.Drawing.Size(100, 20)
+        Me.nudRoomsAvailable.TabIndex = 22
+        Me.nudRoomsAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.nudRoomsAvailable.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'btnClassesImport
         '
@@ -674,53 +721,6 @@ Partial Class DataGenerator
         Me.btnRandomGenerate.Text = "Generate!"
         Me.btnRandomGenerate.UseVisualStyleBackColor = True
         '
-        'nudRoomsAvailable
-        '
-        Me.nudRoomsAvailable.Location = New System.Drawing.Point(149, 282)
-        Me.nudRoomsAvailable.Name = "nudRoomsAvailable"
-        Me.nudRoomsAvailable.Size = New System.Drawing.Size(100, 20)
-        Me.nudRoomsAvailable.TabIndex = 22
-        Me.nudRoomsAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.nudRoomsAvailable.Value = New Decimal(New Integer() {10, 0, 0, 0})
-        '
-        'nudRoomsStudents
-        '
-        Me.nudRoomsStudents.Location = New System.Drawing.Point(149, 329)
-        Me.nudRoomsStudents.Name = "nudRoomsStudents"
-        Me.nudRoomsStudents.Size = New System.Drawing.Size(100, 20)
-        Me.nudRoomsStudents.TabIndex = 23
-        Me.nudRoomsStudents.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.nudRoomsStudents.Value = New Decimal(New Integer() {30, 0, 0, 0})
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(69, 264)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(180, 15)
-        Me.Label2.TabIndex = 24
-        Me.Label2.Text = "Number of rooms available"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(55, 311)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(194, 15)
-        Me.Label13.TabIndex = 25
-        Me.Label13.Text = "Number of students per room"
-        '
-        'btnRoomsGenerate
-        '
-        Me.btnRoomsGenerate.Location = New System.Drawing.Point(149, 360)
-        Me.btnRoomsGenerate.Name = "btnRoomsGenerate"
-        Me.btnRoomsGenerate.Size = New System.Drawing.Size(97, 23)
-        Me.btnRoomsGenerate.TabIndex = 26
-        Me.btnRoomsGenerate.Text = "Generate Rooms"
-        Me.btnRoomsGenerate.UseVisualStyleBackColor = True
-        '
         'DataGenerator
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -732,6 +732,8 @@ Partial Class DataGenerator
         Me.TabControl1.ResumeLayout(False)
         Me.Classes.ResumeLayout(False)
         Me.Classes.PerformLayout()
+        CType(Me.nudRoomsStudents, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudRoomsAvailable, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudClassesUnits, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Curriculum.ResumeLayout(False)
         Me.Curriculum.PerformLayout()
@@ -741,8 +743,6 @@ Partial Class DataGenerator
         CType(Me.nudCurrentYear, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudDropRate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudNumberofStudentsgenerated, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nudRoomsAvailable, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nudRoomsStudents, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
